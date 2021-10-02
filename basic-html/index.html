@@ -5,53 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tổng hợp ví dụ</title>
-</head>
-<body bgcolor="#ffffcc">
     
-    <h3 style="font-family:verdana;color: blueviolet">
-        Tổng hợp ví dụ HTML cơ bản
-    </h3>
-    
-    <ol type="I">
-        <li>Buổi 1
-            <ul type="square" style="color: blue">
-                <li><a href="./vd1/index.html" style="color:hotpink">Ví dụ 1</a></li>
-                <li><a href="./vd1/index.html" style="color:hotpink">Ví dụ 1</a></li>
-                <li><a href="./vd2/index.html" style="color:hotpink">Ví dụ 2</a></li>
-                <li><a href="./vd3/index.html" style="color:hotpink">Ví dụ 3</a></li>
-                <li><a href="./vd4/index.html" style="color:hotpink">Ví dụ 4</a></li>
-                <li><a href="./vd5/index.html" style="color:hotpink">Ví dụ 5</a></li>
-                <li><a href="./vd6/index.html" style="color:hotpink">Ví dụ 6</a></li>
-                <li><a href="./vd7/index.html" style="color:hotpink">Ví dụ 7</a></li>
-                <li><a href="./vd8/index.html" style="color:hotpink">Ví dụ 8</a></li> 
-            </ul>
-        </li>
+    <style>
         
+        a { text-decoration: none }
+        a:link { color: darkslategrey }
+        a:visited { color: darkgreen }
+        a:hover { color: #ed8a11 }
         
-        <li>Buổi 2
-            <ul type="square" style="color: red">
-                <li><a href="./vd10/index.html" style="color:darkgreen">Ví dụ 10</a></li>
-                <li><a href="./vd11/index.html" style="color:darkgreen">Ví dụ 11</a></li>
-                <li><a href="./vd12/index.html" style="color:darkgreen">Ví dụ 12</a></li>
-                <li><a href="./vd13/index.html" style="color:darkgreen">Ví dụ 13</a></li>
-                <li><a href="./vd14/index.html" style="color:darkgreen">Ví dụ 14</a></li>
-                <li><a href="./vd15/index.html" style="color:darkgreen">Ví dụ 15</a></li>
-                <li><a href="./vd16/index.html" style="color:darkgreen">Ví dụ 16</a></li>
-                <li><a href="./vd17/index.html" style="color:darkgreen">Ví dụ 17</a></li>
-                <li><a href="./vd18/index.html" style="color:darkgreen">Ví dụ 18</a></li>
-                <li><a href="./vd19/index.html" style="color:darkgreen">Ví dụ 19</a></li>
-                <li><a href="./vd20/index.html" style="color:darkgreen">Ví dụ 20</a></li>
-                <li><a href="./vd21/index.html" style="color:darkgreen">Ví dụ 21</a></li>
-                <li><a href="./vd22/index.html" style="color:darkgreen">Ví dụ 22</a></li>
-                <li><a href="./vd23/index.html" style="color:darkgreen">Ví dụ 23</a></li>
-                <li><a href="./vd24/index.html" style="color:darkgreen">Ví dụ 24</a></li>
-                <li><a href="./vd25/index.html" style="color:darkgreen">Ví dụ 25</a></li>
-                <li><a href="./vd26/index.html" style="color:darkgreen">Ví dụ 26</a></li>
-            </ul>
+ 
+        .list { text-align: center }
+        .list ol.root {
+            display: inline-block;
             
-        </li>
-    </ol>
+            border-radius: 10px;
+            list-style-type: none;
+            width: 250px
+        }
+        .list li.root {
+            
+            background: darkgoldenrod;
+            margin-bottom: 30px;
 
+            border-block: none; 
+            border-radius: 10px;
+            padding: 10px 5px 5px 0px;
+
+
+        }
+
+
+        ul.child { }
+        ul.child li:hover { background: #cce5ff }
+        ul.child li {
+            font-family: ui-serif;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            
+            padding: 2px;
+            margin: 5px;
+            border-radius: 4px;
+        }
+        
+        body {
+            background: #ffffff url("img/paper.jpg") no-repeat;
+        }
+        
+    </style>
+    
+</head>
+
+
+<body>
+    
+    <h1 style="font-family: monospace;color: blueviolet;text-align: center">
+        Tổng hợp ví dụ HTML cơ bản
+    </h1>
+    
+    <div class="list">
+        
+        <ol class="root">
+            <li class="root">
+                <h2 style="font-family: monospace;color: brown">Buổi 1</h2>
+                <ul class="child">
+                    <li><a href="./vd1/index.html" >Ví dụ 1</a></li>
+                    <li><a href="./vd1/index.html" >Ví dụ 1</a></li>
+                    <li><a href="./vd2/index.html" >Ví dụ 2</a></li>
+                    <li><a href="./vd3/index.html" >Ví dụ 3</a></li>
+                    <li><a href="./vd4/index.html" >Ví dụ 4</a></li>
+                    <li><a href="./vd5/index.html" >Ví dụ 5</a></li>
+                    <li><a href="./vd6/index.html" >Ví dụ 6</a></li>
+                    <li><a href="./vd7/index.html" >Ví dụ 7</a></li>
+                    <li><a href="./vd8/index.html" >Ví dụ 8</a></li> 
+                </ul>
+            </li>
+            
+            
+            <li class="root">
+                <h2 style="font-family: monospace;color: brown">Buổi 2</h2>
+                <ul class="child">
+                    <li><a href="./vd10/index.html" >Ví dụ 10</a></li>
+                    <li><a href="./vd11/index.html" >Ví dụ 11</a></li>
+                    <li><a href="./vd12/index.html" >Ví dụ 12</a></li>
+                    <li><a href="./vd13/index.html" >Ví dụ 13</a></li>
+                    <li><a href="./vd14/index.html" >Ví dụ 14</a></li>
+                    <li><a href="./vd15/index.html" >Ví dụ 15</a></li>
+                    <li><a href="./vd16/index.html" >Ví dụ 16</a></li>
+                    <li><a href="./vd17/index.html" >Ví dụ 17</a></li>
+                    <li><a href="./vd18/index.html" >Ví dụ 18</a></li>
+                    <li><a href="./vd19/index.html" >Ví dụ 19</a></li>
+                    <li><a href="./vd20/index.html" >Ví dụ 20</a></li>
+                    <li><a href="./vd21/index.html" >Ví dụ 21</a></li>
+                    <li><a href="./vd22/index.html" >Ví dụ 22</a></li>
+                    <li><a href="./vd23/index.html" >Ví dụ 23</a></li>
+                    <li><a href="./vd24/index.html" >Ví dụ 24</a></li>
+                    <li><a href="./vd25/index.html" >Ví dụ 25</a></li>
+                    <li><a href="./vd26/index.html" >Ví dụ 26</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="root">
+                <h2 style="font-family: monospace;color: brown">Buổi 3</h2>
+                <ul class="child">
+                    <li><a href="./vd30/index.html" >Ví dụ 30</a></li>
+                    <li><a href="./vd31/index.html" >Ví dụ 31</a></li>
+                    <li><a href="./vd32/index.html" >Ví dụ 32</a></li>
+                    <li><a href="./vd33/index.html" >Ví dụ 33</a></li>
+                    <li><a href="./vd34/index.html" >Ví dụ 34</a></li>
+                </ul>
+            </li>
+        </ol>
+    
+    </div>
 
 
 </body>
