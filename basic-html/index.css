@@ -12,10 +12,10 @@ body {
 /* link css */
 a:link {
 	text-decoration: none; 
-	color: darkslategrey
+	color: darkcyan;
 }
 a:visited {
-	color: darkgreen
+	color: darkslateblue
 }
 a:hover {
 	color: #ed8a11
@@ -33,8 +33,9 @@ ol {
 	text-align: center;
 	
 }
-ol li {
-	background-color: darkgoldenrod;
+.root_li {
+	background-color: rgba(183, 135, 10, 0.65);
+	/* background-color: darkgoldenrod; */
 	
 	padding: 5px 30px 10px 30px;
 	border-radius: 30px 4px 30px 4px;
