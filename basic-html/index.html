@@ -6,53 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tổng hợp ví dụ</title>
     
-    <style>
-        
-        a { text-decoration: none }
-        a:link { color: darkslategrey }
-        a:visited { color: darkgreen }
-        a:hover { color: #ed8a11 }
-        
- 
-        .list { text-align: center }
-        .list ol.root {
-            display: inline-block;
-            
-            border-radius: 10px;
-            list-style-type: none;
-            width: 250px
-        }
-        .list li.root {
-            
-            background: darkgoldenrod;
-            margin-bottom: 30px;
-
-            border-block: none; 
-            border-radius: 10px;
-            padding: 10px 5px 5px 0px;
-
-
-        }
-
-
-        ul.child { }
-        ul.child li:hover { background: #cce5ff }
-        ul.child li {
-            font-family: ui-serif;
-            font-weight: bold;
-            font-size: 20px;
-            text-align: center;
-            
-            padding: 2px;
-            margin: 5px;
-            border-radius: 4px;
-        }
-        
-        body {
-            background: #ffffff url("img/paper.jpg") no-repeat;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="index.css" />
     
 </head>
 
@@ -62,13 +16,13 @@
     <h1 style="font-family: monospace;color: blueviolet;text-align: center">
         Tổng hợp ví dụ HTML cơ bản
     </h1>
-    
-    <div class="list">
         
-        <ol class="root">
-            <li class="root">
-                <h2 style="font-family: monospace;color: brown">Buổi 1</h2>
-                <ul class="child">
+    <ol>
+        
+        <li>
+            <h2 style="font-family:monospace;color:brown">Buổi 1</h2>
+            <!-- <div class="child"> -->
+                <ul>
                     <li><a href="./vd1/index.html" >Ví dụ 1</a></li>
                     <li><a href="./vd1/index.html" >Ví dụ 1</a></li>
                     <li><a href="./vd2/index.html" >Ví dụ 2</a></li>
@@ -79,12 +33,13 @@
                     <li><a href="./vd7/index.html" >Ví dụ 7</a></li>
                     <li><a href="./vd8/index.html" >Ví dụ 8</a></li> 
                 </ul>
-            </li>
-            
-            
-            <li class="root">
-                <h2 style="font-family: monospace;color: brown">Buổi 2</h2>
-                <ul class="child">
+            <!-- </div> -->
+        </li>
+        
+        
+        <li>
+            <h2 style="font-family:monospace;color:brown">Buổi 2</h2>
+                <ul>
                     <li><a href="./vd10/index.html" >Ví dụ 10</a></li>
                     <li><a href="./vd11/index.html" >Ví dụ 11</a></li>
                     <li><a href="./vd12/index.html" >Ví dụ 12</a></li>
@@ -103,23 +58,22 @@
                     <li><a href="./vd25/index.html" >Ví dụ 25</a></li>
                     <li><a href="./vd26/index.html" >Ví dụ 26</a></li>
                 </ul>
-            </li>
-            
-            
-            <li class="root">
-                <h2 style="font-family: monospace;color: brown">Buổi 3</h2>
-                <ul class="child">
+        </li>
+        
+        
+        <li>
+            <h2 style="font-family:monospace;color:brown">Buổi 3</h2>
+                <ul>
                     <li><a href="./vd30/index.html" >Ví dụ 30</a></li>
                     <li><a href="./vd31/index.html" >Ví dụ 31</a></li>
                     <li><a href="./vd32/index.html" >Ví dụ 32</a></li>
                     <li><a href="./vd33/index.html" >Ví dụ 33</a></li>
                     <li><a href="./vd34/index.html" >Ví dụ 34</a></li>
                 </ul>
-            </li>
-        </ol>
+        </li>
+        
+        
+    </ol>
     
-    </div>
-
-
 </body>
 </html>

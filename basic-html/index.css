@@ -1,0 +1,67 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&family=Saira+Stencil+One&family=Sriracha&display=swap');
+
+
+/* reset css */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* link css */
+a:link {
+	text-decoration: none; 
+	color: darkslategrey
+}
+a:visited {
+	color: darkgreen
+}
+a:hover {
+	color: #ed8a11
+}
+
+
+ol {
+	
+	/* centering list */
+	display: table;
+	margin: 0 auto;
+	
+	/* header buoi1 buoi2 buoi3 no bullet and centering */
+	list-style-type: none;
+	text-align: center;
+	
+}
+ol li {
+	background-color: darkgoldenrod;
+	
+	padding: 5px 30px 10px 30px;
+	border-radius: 20px 0 20px 0;
+
+	margin-bottom: 10px;	
+}
+
+
+/* For each item in list */
+ul li {
+	font-size: 20px;
+	width: 80px;
+	padding: 7px 37px 7px 37px;
+}
+ul li:hover {
+	list-style-image: url("img/hand.png");	
+	background: #cce5ff;
+	border-radius: 10px	
+}
+
+
+
+body {
+	font-family: 'Grandstander', cursive;
+	
+	/* background: url("img/bg.jpg"); */
+	/* background-position: center; */
+	
+	background: black url("img/snow3.gif")
+}
