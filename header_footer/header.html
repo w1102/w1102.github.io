@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Header view</title>
+	
+	<style>
+		
+		:root {
+			--my-width: 500px;
+		}
+		
+		/* remove underline link */
+		a:link {text-decoration: none;}
+
+		#header-content table {
+			/* background-color: #014e7e; */
+			background-color: #2697de;
+			border-collapse: collapse;
+			border-radius: 5px
+		}
+		
+		#header-content table  {
+			margin-left: auto;
+			margin-right: auto
+		}
+		
+		
+		/* columns spacing */
+		#header-content table td {padding: 0 8px;}
+		#header-content tr {
+			text-align: center; /* centering element in table */
+			font-size: 0; 		/* remove padding */
+		}
+		
+	
+		/* text css */
+		#header-content table span {
+			font-size: 11pt;
+			color: #fff;
+		}
+		
+		#header-content table span:hover {color: #014e7e;}
+		
+		/* set image white color */
+		#header-content table img:not(.logo) {
+			filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(201deg) brightness(106%) contrast(106%);
+		}
+		
+		/* image hover */
+		#header-content table img:hover:not(.logo) {
+			filter: invert(21%) sepia(26%) saturate(4045%) hue-rotate(178deg) brightness(101%) contrast(104%);
+		}
+
+		
+	</style>
+	
+</head>
+
+<body id="body-header">
+
+
+	
+<div id="header-content">
+	
+	<table>
+	
+		<tr>
+			
+			<td>
+				<img class="logo" src="/img/ctu256.png" width="50" height="50" alt="" style="padding: 3px 0 0 0" />
+			</td>
+			
+			
+			<td>
+				<p><a href="/target.html"><span><img src="/img/target2.svg" alt="" width="30" height="30" /></span></a></p>	
+			</td>
+			
+			<td>
+				<p><a href="/output-std.html"><span><img src="/img/output-std.svg" alt="" width="36" height="36" /></span></a></p>	
+			</td>
+			
+			<td>
+				<p><a href="/teaching-method.html"><span><img  src="/img/method.svg" alt="" width="32" height="32" /></span></a></p>	
+			</td>
+
+			<td>
+				<p><a href="/rating.html"><span><img src="/img/list.svg" alt="" width="36" height="36" /></span></a></p>	
+			</td>
+			
+			<td>
+				<p><a href="/time-table.html"><span><img src="/img/time-table.svg" alt="" width="36" height="36" /></span></a></p>	
+			</td>
+			
+			<td>
+				<p><a href="/basic-html/index.html"><span><img src="../img/task.svg" alt="" width="36" height="36" /></span></a></p>	
+			</td>
+
+		</tr>
+		
+		<tr>
+			
+			<td>
+				<p><a href="/index.html"><span>Home</span></a></p>
+			</td>
+			
+			
+			<td>
+				<p><a href="/target.html"><span>Mục tiêu</span></a></p>
+			</td>
+			
+			<td>
+				<p><a href="/output-std.html"><span>Chuẩn đầu ra</span></a></p>
+			</td>
+			
+			<td>
+				<p><a href="/teaching-method.html"><span>PP giảng dạy</span></a></p>
+			</td>
+			
+			<td>
+				<p><a href="/rating.html"><span>PP đánh giá</span></a></p>
+			</td>
+			
+			<td>
+				<p><a href="/time-table.html"><span>Phân bố tiết học</span></a></p>
+			</td>
+			
+			<td>
+				<p><a href="/basic-html/index.html"><span>Bài tập</span></a></p>
+			</td>
+			
+		</tr>
+	</table>
+	
+</div>
+
+<script>
+	
+	var gg = document.getElementById("target-icon");
+	gg.style.filter = "nvert(21%) sepia(26%) saturate(4045%) hue-rotate(178deg) brightness(101%) contrast(104%)";
+	
+</script>
+	
+</body>
+</html>
