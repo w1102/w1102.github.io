@@ -12,46 +12,30 @@
 
 	
 		body{margin: 0; padding: 0}
-		body{margin-top: 10px}
+		body{margin-top: 10px; margin-bottom: 10px}
 		
 		#content {
-			  text-align: center;
-			  width: var(--my-width);
-			  margin: 0 auto;
-			}
+			text-align: center;
+			width: var(--my-width);
+			margin: 0 auto;
+
+		}
+
+		#content table, #content td, #content th { 
+			border-collapse: collapse; 
+			padding: 7px;
+			/* border: #4e95f4 1px solid; */
+			border: black 1px solid;
+			padding: 10px 30px;
+		}
 			
-			#content table {
-			  overflow: hidden;
-			  display:inline-block;
-			  padding: 0 0 10px 0;
-			  
-			}
+		/* #content tr {background: #b8d1f3;} */
 			
-			#content td, #content th {
-				border: 1px solid #999;
-				padding: 20px;
-				position: relative;
-			}
-			
-			#content th {
-			  background-color:#fff;
-			}
-			
-			#content td:hover::before {
-				background-color: #c2c9c9;
-				content: ''; 
-				height: 100%;
-				left: -5000px;
-				position: absolute;  
-				top: 0;
-				width: 10000px;  
-				z-index: -2;  
-			}
-			
-			#content table, #content th, #content td {
-				border-collapse: collapse;
-			}
-		
+	
+		#content tr:hover td{
+			background-color: rgba(38, 151, 222, 0.5)
+		}
+
 		
 	</style>
 	
@@ -76,8 +60,8 @@
 			</tr>
 					
 			<tr>
-				<th rowspan="5">Sáng</th>
-				<td>1</td>
+				<th class="col-header" rowspan="5">Sáng</th>
+				<td class="td-tiethoc">1</td>
 				<td><b>07:00</b> - 07:50</td>
 				<td>Không</td>
 			</tr>

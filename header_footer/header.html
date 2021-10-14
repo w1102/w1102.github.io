@@ -7,26 +7,20 @@
 	<title>Header view</title>
 	
 	<style>
+
+		:root {--my-width: 560px;}
 		
-		:root {
-			--my-width: 500px;
-		}
-		
-		/* remove underline link */
 		a:link {text-decoration: none;}
 
 		#header-content table {
-			/* background-color: #014e7e; */
+			width: 600px;
+			margin: 0 auto;
+			
 			background-color: #2697de;
 			border-collapse: collapse;
 			border-radius: 5px
 		}
-		
-		#header-content table  {
-			margin-left: auto;
-			margin-right: auto
-		}
-		
+
 		
 		/* columns spacing */
 		#header-content table td {padding: 0 8px;}
@@ -57,6 +51,7 @@
 		body {
 			background: url("/img/bg.jpg");
 			background-position: center;
+			z-index: 1;
 		}
 
 		
