@@ -64,8 +64,8 @@ ul li:hover {
 body {
 	/* font-family: 'Grandstander', cursive; */
 	
-	background: url("img/bg.jpg");
-	background-position: center;
+	/* background: url("/img/bg.jpg");
+	background-position: center; */
 	
 	/* background: black url("img/snow3.gif") */
 }
