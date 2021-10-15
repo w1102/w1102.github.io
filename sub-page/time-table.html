@@ -12,19 +12,18 @@
 
 	
 		body{margin: 0; padding: 0}
-		body{margin-top: 10px; margin-bottom: 10px}
+		body{margin: 10px 0}
 		
 		#content {
 			text-align: center;
 			width: var(--my-width);
-			margin: 0 auto;
+			margin: 0 auto 10px;
 
 		}
 
 		#content table, #content td, #content th { 
 			border-collapse: collapse; 
 			padding: 7px;
-			/* border: #4e95f4 1px solid; */
 			border: black 1px solid;
 			padding: 10px 30px;
 		}
@@ -33,6 +32,7 @@
 			
 	
 		#content tr:hover td{
+			transition: all 0.4s;
 			background-color: rgba(38, 151, 222, 0.5)
 		}
 
@@ -143,6 +143,10 @@
 		</table>
 		
 	</div>
+	
+	
+	<div id="footer" data-include-html="/header_footer/footer.html"></div>
+
 	
 	<script>includeHTML()</script>
 	

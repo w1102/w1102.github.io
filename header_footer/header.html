@@ -10,7 +10,7 @@
 
 		:root {--my-width: 560px;}
 		
-		a:link {text-decoration: none;}
+		#header-content a:link {text-decoration: none;}
 
 		#header-content table {
 			width: 600px;
@@ -45,13 +45,13 @@
 		
 		/* image hover */
 		#header-content table img:hover:not(.logo) {
+			transition: all 0.4s;
 			filter: invert(21%) sepia(26%) saturate(4045%) hue-rotate(178deg) brightness(101%) contrast(104%);
 		}
 		
 		body {
 			background: url("/img/bg.jpg");
 			background-position: center;
-			z-index: 1;
 		}
 
 		
