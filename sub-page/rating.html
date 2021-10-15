@@ -13,16 +13,21 @@
 		body { margin: 0; padding:0}
 		body { margin: 10px 0}
 		
-		#rating-content {
+		#content {
 			width: var(--my-width);
 			margin: 0 auto 10px;
 		}
 
 		
-		#rating-content table, #rating-content th, #rating-content td {
+		#content table, #content th, #content td {
 			text-align: center;
 			border: 1px solid black;
 			border-collapse: collapse;
+		}
+		
+		#content tr:hover td {
+			transition: all 0.4s;
+			background-color: rgba(38, 151, 222, 0.5)
 		}
 		
 		#tr-header th {
@@ -38,7 +43,7 @@
 	
 	<div id="header" data-include-html="/header_footer/header.html"></div>
 	
-	<div id="rating-content">
+	<div id="content">
 		
 		<h3 style="text-align:center;text-transform:uppercase">Sinh viên được đánh giá tích lũy học phần như sau:</h3>
 		<table>
