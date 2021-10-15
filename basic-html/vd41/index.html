@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS From</title>
+	
+	<style>
+		
+		.form1 input[type=text] {
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid red;
+			border-radius: 5px;
+		}
+		
+		.form1 input[type=text]:focus {
+			background-color: lightblue;
+		}
+		
+		.searchbar {margin-top: 50px;}
+		
+		.searchbar input[type=text] {
+			
+			
+			box-sizing: border-box;
+			border: 2px solid black;
+			border-radius: 5px;
+			font-size: 13pt;
+			background-color: white;
+			background-image: url('/basic-html/img/Magnifying.svg');
+			background-size: 20px 20px;
+			background-repeat: no-repeat;
+			
+			background-position: 10px 10px;
+			
+			padding: 12px 20px 12px 40px;
+		}
+		
+	</style>
+	
+</head>
+<body>
+	
+	
+	<div class="form1">
+		<h4>Text field with border</h4>
+		<form>
+			<label for="fname">First name</label>
+			<input type="text" id="fname" name="fname">
+			<br>
+			<label for="lname">Last name</label>
+			<input type="text" id="lname" name="lname">
+			
+		</form>
+	</div>
+	
+	
+	<div class="searchbar">
+		<h4>Search bar with icon </h4>
+		<form>
+			<input type="text" name="search" placeholder="Searching">
+		</form>
+	</div>
+	
+	<br/><br/>
+	<a href="../index.html">Quay về trang bài tập</a>
+	
+	
+</body>
+</html>
