@@ -1,6 +1,7 @@
 /* import google font */
 @import url('https://fonts.googleapis.com/css2?family=Grandstander&family=Saira+Stencil+One&family=Sriracha&display=swap');
 
+body {margin: 0; padding: 0}
 	
 /* link css */
 #content a:link {text-decoration: none; color: darkcyan;}
