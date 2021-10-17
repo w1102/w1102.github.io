@@ -12,22 +12,6 @@
     <script src="/script/includeHTML.js"></script>
     <script src="/script/jquery-3.6.0.min.js"></script>
     <script src="/script/main.js"></script>
-    
-    
-    <!-- Handle Routing in Single Page -->
-    <script>
-        let urlHash = window.location.hash.substring(1)
-        
-        if (urlHash == '') {
-            window.location.replace('/#home');
-        }
-        else {
-            switchMenu(urlHash)
-        }
-        
-        
-    </script>
-     
 
     <style>
     
@@ -35,169 +19,37 @@
         
         .body-container {
             width: 600px;
-            margin: 85px auto 30px;
-            
+            margin: 85px auto 30px
         }
         
-        body {
-            background-image: url('/img/bg.jpg')
-        }
+        body {background-image: url('/img/bg.jpg')}
 
-    
     </style>
        
 </head>
 <body>
     
-    <div class="header-container">
-        
-        <div class="logo-container">
-            <img class="logo" src="/img/header/ctu.png" width="50"  height="50" alt=""/>
-            
-            <h2>Sinh viên cơ điện tử CTU</h2>
-        </div>
-        
-        
-        <ul class="header-item-container">
-            
-            <li class="item">
-                <ul>
-                   <li>
-                       <p onclick="switchMenu('home')">
-                           <img id="img-home" src="/img/header/home.svg" alt="" width="32"/>
-                       </p>
-                   </li> 
-                   
-                   <li>
-                       <p class="text" id="txt-home" onclick="switchMenu('home')">Home</p>
-                   </li>
-
-                </ul>                
-            </li>
-            
-            <li class="item">
-                <ul>
-                   <li>
-                       <p onclick="switchMenu('target')">
-                           <img id="img-target" src="/img/header/target.svg" alt="" width="32"/>
-                       </p>
-                   </li> 
-                   <li>
-                       <p class="text" id="txt-target" onclick="switchMenu('target')">Mục tiêu</p>
-                   </li>
-                   
-                </ul>                
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('standard')">
-                            <img id="img-standard" src="/img/header/standard.svg" alt="" width="32"/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-standard" onclick="switchMenu('standard')">Chuẩn đầu ra</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('method')">
-                            <img id="img-method" src="/img/header/method.svg" alt="" width="32"/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-method" onclick="switchMenu('method')">PP giảng dạy</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('rate')">
-                            <img id="img-rate" src="/img/header/list.svg" alt="" width="32"/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-rate" onclick="switchMenu('rate')">PP đánh giá</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('time-table')">
-                            <img id="img-time-table" src="/img/header/time-table.svg" alt="" width="32"/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-time-table" onclick="switchMenu('time-table')">Tiết học</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('location')">
-                            <img id="img-location" src="/img/header/location.svg" alt="" width="32"/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-location" onclick="switchMenu('location')">Phòng học</p>
-                    </li>
-                </ul>
-            </li>
-            
-
-            
-        </ul>
-    </div>  
+    <div class="header-container" data-html="/sub-page/header-footer/header.html"></div>
     
     
-    <div class="body-container" data-html="/sub-page/home.html">    </div>
+    <div class="body-container" data-html=""></div>
     
     
-    <div class="footer-container">  
-        <ul>
-            
-            <li><p><a href="/basic-html/" ><span>Ví dụ</span></a></p></li>
-            
-            <li><p><a href="https://htql.ctu.edu.vn/" target="_blank"><span>HTQL</span></a></p></li>
-            
-            <li><p><a href="https://elearning.ctu.edu.vn/" target="_blank"><span>Elearning</span></a></p></li>
-            
-            <li><p><a href="https://testing.ctu.edu.vn/" target="_blank"><span>Testing</span></a></p></li>
-        </ul>
+    <div class="footer-container" data-html="/sub-page/header-footer/footer.html"></div>
         
-        <p>Copyright &copy; 2021 - <a id="copyright" href="/">Quang</a></p>
-
+    <!-- Handle Routing in Single Page -->
+    <script>
+        let urlHash = window.location.hash.substring(1)
         
-        <div class="img-container">
-    
-            
-            <a href="https://github.com/w1102" target="_blank">
-                <span><img src="/img/github.svg" alt="" width="25" height="25"></span>
-            </a>
-            
-            <a href="https://www.facebook.com/tranwang1102" target="_blank">
-                <span><img src="/img/facebook.svg" alt="" width="25" height="25"></span>
-            </a>
-        </div>
-        
-    </div>
-    
-    <script>includeHTML()</script>
+        if (urlHash == '') {
+            window.location.replace('/#home');
+            switchingMenu('home')
+        }
+        else {
+            switchingMenu(urlHash)
+        }
+    </script>
+     
 
 </body>
 </html>
