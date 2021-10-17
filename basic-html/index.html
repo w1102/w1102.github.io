@@ -21,8 +21,6 @@
          background-color: #2697de
       }
       
-      .header p a {font-size: 18pt}
-      
       a:link {color: white; text-decoration: none}
       a:visited{color: white}
       
@@ -33,6 +31,16 @@
       
       body {
          background-image: url(/img/bg.jpg)
+      }
+      
+      .header p a {font-size: 18pt}
+      .header p {font-size:  20pt }
+      .header img {width: 60px; height: 60px}
+      
+      @media (max-width: 500px) {
+         .header p a {font-size: 10pt}
+         .header p {font-size:  11pt }
+         .header img {width: 40px; height: 40px}
       }
 
    </style>
@@ -45,9 +53,9 @@
    
    
    <div class="header">
-         <img style="margin-left: 20px" class="logo" src="/img/header/ctu.png" width="60"   height="60" alt=""/>
+         <img style="margin-left: 10px" class="logo" src="/img/header/ctu.png" alt=""/>
          
-         <h1 style=";color: white;text-align: center">Tổng hợp ví dụ HTML cơ bản</h1>
+         <p style="color: white;text-align: center">Tổng hợp ví dụ HTML</p>
          
          <p style="margin-right: 20px"><a href="/">HOME</a></p>
          
