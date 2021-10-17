@@ -34,7 +34,7 @@
 
 /* margin first and last item */
 .logo {margin-left: 10px}
-.header-item-container:last-child {margin-right: 10px}
+#lasted-item {margin-right: 5px}
 
 
 .item ul {list-style-type: none}

@@ -15,7 +15,7 @@ function switchMenu(menu) {
 	$('.body-container').animate({
 		marginTop: -500,
 		opacity: 0
-		}, 300, function() {
+		}, 400, function() {
 		
 		switchingMenu(menu)
 			
