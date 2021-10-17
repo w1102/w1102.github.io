@@ -2,6 +2,16 @@
 
 
 function switchMenu(menu) {
+	
+	// Handle Routing in Single Page
+	let urlHash = window.location.hash.substring(1)
+	
+	if 	(urlHash != menu) {
+		let urlNew = '/#' + menu
+		window.location.replace(urlNew);
+	}
+	
+	// switching menu
 	$('.body-container').animate({
 		marginTop: -500,
 		opacity: 0
@@ -35,6 +45,8 @@ function switchingMenu(menu) {
 	// change html data
 	let content = document.querySelector('.body-container')
 	let url = '/sub-page/' + menu + '.html'
+	
+	console.log(url)
 
 	content.setAttribute("data-html", url) 
 	includeHTML()

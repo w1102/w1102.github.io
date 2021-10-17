@@ -12,6 +12,21 @@
     <script src="/script/includeHTML.js"></script>
     <script src="/script/jquery-3.6.0.min.js"></script>
     <script src="/script/main.js"></script>
+    
+    
+    <!-- Handle Routing in Single Page -->
+    <script>
+        let urlHash = window.location.hash.substring(1)
+        
+        if (urlHash == '') {
+            window.location.replace('/#home');
+        }
+        else {
+            switchMenu(urlHash)
+        }
+        
+        
+    </script>
      
 
     <style>
@@ -48,13 +63,13 @@
             <li class="item">
                 <ul>
                    <li>
-                       <p onclick="switchMenu('info')">
+                       <p onclick="switchMenu('home')">
                            <img id="img-home" src="/img/header/home.svg" alt="" width="32"/>
                        </p>
                    </li> 
                    
                    <li>
-                       <p class="text" id="txt-info" onclick="switchMenu('info')">Home</p>
+                       <p class="text" id="txt-home" onclick="switchMenu('home')">Home</p>
                    </li>
 
                 </ul>                
@@ -150,7 +165,7 @@
     </div>  
     
     
-    <div class="body-container" data-html="/sub-page/info.html">    </div>
+    <div class="body-container" data-html="/sub-page/home.html">    </div>
     
     
     <div class="footer-container">  
