@@ -7,8 +7,8 @@ const menu = header.querySelector(".menu");
 function removeMenu() {
 	if (menu.classList.contains('active')) {
 		menu.classList.remove('active')                
-		toggle.querySelector('a').innerHTML = 
-		'<i class="fas fa-bars"></i>'
+		toggle.querySelector('img').src = 
+		"/img/header/menu.svg"
 	}
 	
 }
@@ -16,13 +16,13 @@ function removeMenu() {
 function toggleMenu() {
 	if (menu.classList.contains('active')) {
 		menu.classList.remove('active')                
-		toggle.querySelector('a').innerHTML = 
-		'<i class="fas fa-bars"></i>'
+		toggle.querySelector('img').src = 
+		"/img/header/menu.svg"
 	}
 	else {
 		menu.classList.add('active');
-		toggle.querySelector('a').innerHTML = 
-		'<i class="fas fa-times"></i>'
+		toggle.querySelector('img').src = 
+		"/img/header/close.svg"
 	}
 }
 

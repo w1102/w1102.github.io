@@ -34,7 +34,13 @@ nav {
 	width: 32px; height: 32px;
 	filter: invert(94%) sepia(11%) saturate(48%) hue-rotate(132deg) brightness(103%) contrast(92%);
 }
+
+.toggle img {
+	cursor: pointer;
+	filter: invert(94%) sepia(11%) saturate(48%) hue-rotate(132deg) brightness(103%) contrast(92%);
+}
 .toggle {display: none}
+
 
 .menu {
 	display: flex;
@@ -46,9 +52,12 @@ nav {
 
 
 
+
+
 /* ===============		MOBILE		=============== */
 @media (max-width: 800px) {
 	.item img {display: none}
+	
 	
 	.menu {
 		flex-wrap: wrap;
