@@ -1,9 +1,10 @@
-
 function switchMenu(menu) {
+	
+	// remove menu if exits in mobile mode
+	removeMenu()
 	
 	// URL handle routing in single page
 	let urlHash = window.location.hash.substring(1)
-	
 	if 	(urlHash != menu) {
 		let urlNew = '/#' + menu
 		window.location.replace(urlNew);
@@ -19,7 +20,7 @@ function switchMenu(menu) {
 			
 			$('.body-container').animate({marginTop: 2000}, 0, function() {
 				   $('.body-container').animate({
-					   marginTop : 85,
+					   marginTop : 100,
 					   opacity: 1
 				   }, 300)
 				   
@@ -90,3 +91,4 @@ function switchingMenu(menu) {
 	catch(err){}
 
 }
+

@@ -20,11 +20,15 @@
 			border-collapse: collapse; 
 			padding: 7px;
 			border: black 1px solid;
-			padding: 10px 40px;
+			padding: 10px 60px;
 		}
-			
-		/* #content tr {background: #b8d1f3;} */
-			
+		
+		@media (max-width: 750px) {
+			#content table, #content td, #content th {
+				padding: 10px 10px;
+			}
+		}
+						
 	
 		#content tr:hover td {
 			transition: all 0.4s;

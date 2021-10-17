@@ -12,7 +12,20 @@
 		
 		#content p {font-size: 12pt}
 		
+		#content iframe {
+			width: 580px;
+			height: 300px;
+		}
 		
+		@media (max-width: 600px) {
+			#content iframe {
+				width: 300px;
+			}
+		}
+		
+		#p-frame {
+			text-align: center;
+		}
 	</style>
 
 	
@@ -24,8 +37,8 @@
 		
 		<h3 style="text-align:center;text-transform:uppercase">Sơ đồ nhà học - Ký hiệu phòng học</h3>
 		
-		<p>
-			<iframe src="https://www.google.com/maps/d/embed?mid=1PExWVuK_UzXILm6e0KwoQjh2Pv4" width="600" height="300"></iframe>
+		<p id="p-frame">
+			<iframe src="https://www.google.com/maps/d/embed?mid=1PExWVuK_UzXILm6e0KwoQjh2Pv4"></iframe>
 		</p>
 		
 		
