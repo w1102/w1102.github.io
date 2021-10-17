@@ -43,7 +43,7 @@
 
 
 /* pc , laptop */
-@media (min-width: 600px) {
+@media (min-width: 630px) {
 	.footer-container img {
 		width: 25px; height: 25px;
 	}

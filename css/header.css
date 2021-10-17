@@ -78,3 +78,9 @@ nav {
 
 }
 
+@media (max-width: 350px) {
+	.logo {
+		font-size: 15px;
+	}
+}
+
