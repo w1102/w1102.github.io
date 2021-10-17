@@ -1,9 +1,7 @@
 
-
-
 function switchMenu(menu) {
 	
-	// Handle Routing in Single Page
+	// URL handle routing in single page
 	let urlHash = window.location.hash.substring(1)
 	
 	if 	(urlHash != menu) {
@@ -69,7 +67,7 @@ function switchingMenuCallback(menu, callback) {
 
 function switchingMenu(menu) {
 
-	// set filter of all image is none
+	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
 	for(let i = 0; i < texts.length; i++) {
 		
@@ -77,19 +75,16 @@ function switchingMenu(menu) {
 		
 	}
 	
-	// change html data
+	// including html data to body-container
 	let content = document.querySelector('.body-container')
 	let url = '/sub-page/' + menu + '.html'
 	
-	console.log(url)
-
 	content.setAttribute("data-html", url) 
 	includeHTML()
 	
-	// change current menu icon color        
+	// change current menu icon color     
 	let textSelected = document.querySelector('#txt' + '-' + menu)
 	try {
-		
 		textSelected.style.color = "white"
 	}
 	catch(err){}
