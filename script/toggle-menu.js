@@ -4,23 +4,21 @@ const menu = header.querySelector(".menu");
 
 function removeMenu() {
 	if (menu.classList.contains('active')) {
-		menu.classList.remove('active')                
-		toggle.querySelector('img').src = 
-		"/img/header/menu.svg"
+		menu.classList.remove('active')
+		toggle.querySelector('img').src =
+			"/img/header/menu.svg"
 	}
-	
 }
- 
+
 function toggleMenu() {
 	if (menu.classList.contains('active')) {
-		menu.classList.remove('active')                
-		toggle.querySelector('img').src = 
-		"/img/header/menu.svg"
-	}
-	else {
+		menu.classList.remove('active')
+		toggle.querySelector('img').src =
+			"/img/header/menu.svg"
+	} else {
 		menu.classList.add('active');
-		toggle.querySelector('img').src = 
-		"/img/header/close.svg"
+		toggle.querySelector('img').src =
+			"/img/header/close.svg"
 	}
 }
 

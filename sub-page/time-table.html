@@ -1,145 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bảng phân bố tiết học</title>
-	
-	
 	<style>
-
-
-		
 		#content {
 			text-align: center;
 			padding-bottom: 20px
 		}
 
-		#content table, #content td, #content th { 
-			border-collapse: collapse; 
+		#content table,
+		#content td,
+		#content th {
+			border-collapse: collapse;
 			padding: 7px;
 			border: black 1px solid;
 			padding: 10px 60px;
 		}
-		
-		@media (max-width: 700px) {
-			#content table, #content td, #content th {
-				padding: 10px 10px;
-			}
-		}
-						
-	
+
 		#content tr:hover td {
 			transition: all 0.4s;
 			background-color: rgba(38, 151, 222, 0.5)
 		}
 
-		
+		@media (max-width: 700px) {
+
+			#content table,
+			#content td,
+			#content th {
+				padding: 10px 10px;
+			}
+		}
 	</style>
-	
 </head>
+
 <body>
-	
-	
 	<div id="content">
-		
 		<h3>PHÂN BỐ TIẾT HỌC <br> (Trích từ Qui định về công tác học vụ)</h3>
-		
 		<table>
-								
 			<tr>
 				<th>Buổi học</th>
 				<th>Tiết học</th>
 				<th>Giờ học</th>
 				<th>Thời gian nghỉ</th>
 			</tr>
-					
 			<tr>
 				<th class="col-header" rowspan="5">Sáng</th>
 				<td class="td-tiethoc">1</td>
 				<td><b>07:00</b> - 07:50</td>
 				<td>Không</td>
 			</tr>
-			
 			<tr>
 				<td>2</td>
 				<td>07:50 - 08:40</td>
 				<td>10 phút</td>
 			</tr>
-			
 			<tr>
 				<td>3</td>
 				<td>08:50 - 09:40</td>
 				<td>10 phút</td>
 			</tr>
-			
 			<tr>
 				<td>4</td>
 				<td>09:50 - 10:40</td>
 				<td>Không</td>
 			</tr>
-					
 			<tr>
 				<td>5</td>
 				<td>10:40 - <b>11:30</b></td>
 				<td></td>
 			</tr>
-			
 			<tr>
 				<th rowspan="5">Chiều</th>
 				<td>6</td>
 				<td><b>13:30</b> - 14:20</td>
-				<td>Không</td>				
+				<td>Không</td>
 			</tr>
-			
 			<tr>
 				<td>7</td>
 				<td>14:20 - 15:10</td>
 				<td>10 phút</td>
 			</tr>
-			
 			<tr>
 				<td>8</td>
 				<td>15:20 - 16:10</td>
 				<td>Không</td>
 			</tr>
-			
 			<tr>
 				<td>9</td>
 				<td>16:10 - 17:00</td>
 				<td></td>
 			</tr>
-					
 			<tr>
 				<td>10</td>
 				<td><b>Tiết nghỉ chung</b></td>
 				<td></td>
 			</tr>
-					
 			<tr>
 				<th rowspan="3">Tối</th>
 				<td>11</td>
 				<td><b>18:30</b> - 19:20</td>
 				<td>Không</td>
 			</tr>
-			
 			<tr>
 				<td>12</td>
 				<td>19:20 - 20:10</td>
 				<td>10 phút</td>
 			</tr>
-					
 			<tr>
 				<td>13</td>
 				<td>20:20 - <b>21:10</b></td>
 				<td></td>
 			</tr>
-					
 		</table>
-		
 	</div>
-
-	
 </body>
+
 </html>

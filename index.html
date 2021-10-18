@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinh viên CTU</title>
-    
-    <link rel="stylesheet" href="/css/footer.css">
+
     <link rel="stylesheet" href="/css/header.css">
-    
-    <script src="/script/includeHTML.js"></script>
+
     <script src="/script/jquery-3.6.0.min.js"></script>
-    
     <script src="/script/toggle-menu.js" defer></script>
     <script src="/script/main.js"></script>
-    
-    <script>
-    
-        function addMenuItem(hash, name, img) {
-            
-            let item = document.createElement("LI")
-            item.setAttribute('class', 'item')
-            item.innerHTML =
-                '<ul>'
-            +       '<li>'
-            +           '<p onclick="switchMenu(\'' + hash + '\')">'
-            +               '<img id="img-' + hash + '" src="' + img + '" alt=""/>'
-            +           '</p>'
-            +        '</li>'
-            +        '<li>'
-            +            '<p class="text" id="txt-' + hash + '" onclick="switchMenu(\'' + hash + '\')">' + name + '</p>'
-            +        '</li>'
-            +    '</ul>'
-
-            let menu = document.querySelector('.menu')
-            menu.appendChild(item); 
-            
-        }
-    
-    </script>
 
     <style>
-    
-        body {margin: 0;padding: 0;}  
-        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         .body-container {
             width: 80%;
             margin: 100px auto 30px
         }
-        
+
         @media (min-width: 700px) {
             .body-container {
                 width: 70%;
             }
         }
-        
-        body {background-image: url('/img/bg.jpg')}
 
+        body {
+            background-image: url('/img/bg.jpg')
+        }
     </style>
-       
+
 </head>
+
 <body>
-    
+
     <nav class="header-container">
         <ul class="menu">
-    
+
             <li class="logo">
-                <img src="/img/header/ctu.png" width="50"  height="50" alt=""/>
+                <img src="/img/header/ctu.png" width="50" height="50" alt="" />
                 <p style="color:white;margin:10px;text-transform:uppercase">
                     Sinh viên cơ điện tử
                 </p>
             </li>
-            
+
             <script>
                 addMenuItem('home', 'Home', '/img/header/home.svg')
                 addMenuItem('target', 'Mục tiêu', '/img/header/target.svg')
@@ -81,27 +58,28 @@
                 addMenuItem('time-table', 'Tiết học', '/img/header/time-table.svg')
                 addMenuItem('location', 'Phòng học', '/img/header/location.svg')
             </script>
-            
+
             <li class="toggle"><img src="/img/header/menu.svg" alt="" width="25"></li>
-             
+
         </ul>
     </nav>
-    
-    <div class="body-container" data-html=""></div>
-    
-    <div class="footer-container" data-html="/sub-page/footer.html"></div>
-    
+
+    <div class="body-container"></div>
+    <div class="footer-container"></div>
+
     <!-- Handle URL routing in single page -->
     <script>
+        includeHTML('.footer-container', '/sub-page/footer.html')
+
         let urlHash = window.location.hash.substring(1)
-        
         if (urlHash == '') {
             window.location.replace('/#home');
             switchingMenu('home')
-        }
-        else {
+        } else {
             switchingMenu(urlHash)
         }
     </script>
+
 </body>
+
 </html>
