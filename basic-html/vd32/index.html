@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CSS Z index</title>
-	
+
 	<style>
 		img.laptop {
 			position: absolute;
 			z-index: -1
 		}
-		
-		h2.ex1, p.ex1 {
+
+		h2.ex1,
+		p.ex1 {
 			color: crimson;
 			position: relative;
 			top: 100px;
 			left: 80px
-			
 		}
-		
+
 		img.road {
 			position: relative;
 			top: 250px;
 		}
-		
+
 		img.car {
 			position: absolute;
 			top: 500px;
 			left: 70px;
 			z-index: 1;
 		}
-		
+
 		.ex2 {
 			color: red;
 			position: relative;
@@ -39,25 +40,26 @@
 			left: 80px
 		}
 	</style>
-	
+
 </head>
+
 <body>
 	<img class="laptop" src="../img/laptop.png" alt="img1" width="500" height="300" />
-	
+
 	<h2 class="ex1">Laptop picture at below layer</h2>
 	<p class="ex1">Default z-index is 0. Z-index -1 has lower priority</p>
-	
-	
-	<img class="road" src="../img/road.jpg" alt="road" width="500" height="300"/>
 
-	<img class="car" src="../img/car.png" alt="car" width="200" height="100"/>
-	
+
+	<img class="road" src="../img/road.jpg" alt="road" width="500" height="300" />
+
+	<img class="car" src="../img/car.png" alt="car" width="200" height="100" />
+
 	<h4 class="ex2">Car picture at the top layer</h4>
-	<p class="ex2"> Default z-index is 0. Z-index 1 has higher priority<br/><br/><br/></p>
-	
-	<br/><br/>
-	
-	<a style="position: relative; left: 600px " href="../index.html">Quay về trang chủ</a>
-	
+	<p class="ex2"> Default z-index is 0. Z-index 1 has higher priority<br /><br /><br /></p>
+
+	<br /><br />
+	<a href="/basic-html/index.html">Quay về ví dụ</a>
+
 </body>
+
 </html>

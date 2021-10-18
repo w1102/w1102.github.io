@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +9,35 @@
 </head>
 
 <body background="../img/paper.jpg">
-	
+
 	<h4>Ví dụ về radio button</h4>
 	<form>
 		<input type="radio" name="sex" value="male" /> Male
-		<br/>
+		<br />
 		<input type="radio" name="sex" value="female" /> Female
 	</form>
-	<br/><br/>
-	
-	
-	
+	<br /><br />
+
+
+
 	<h4>Ví dụ về checkbox</h4>
 	<form>
-		<input type="checkbox" name="bike" value="true"/>
+		<input type="checkbox" name="bike" value="true" />
 		I have a bike
-		<br/>
+		<br />
 		<input type="checkbox" name="car" value="true" />
 		I have a car
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về button</h4>
 	<form>
 		<input type="button" onclick="alert('hello')" value="Nhấn vào!!" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về Drop-down list</h4>
 	<form>
 		<select name="Laptop">
@@ -44,94 +45,94 @@
 			<option value="dell"> Dell </option>
 			<option value="acer"> Acer</option>
 		</select>
-		<br/><br/>
+		<br /><br />
 		<input type="submit" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về text area</h4>
 	<form>
 		<textarea name="message" rows="10" cols="30">The cat was playing in the garden.
 		</textarea>
-		<br/>
+		<br />
 		<input type="submit" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về submit button</h4>
 	<form action="/action.php">
-		First name:<br/>
+		First name:<br />
 		<input type="text" name="firstname" value="Mickey" />
-		<br/>
+		<br />
 		<input type="text" name="lastname" value="Mouse" />
-		<br/><br/>
-		<input type="submit" value="Submit"/>
+		<br /><br />
+		<input type="submit" value="Submit" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về upload file</h4>
 	<form enctype="multipart/form-data" action="upload.php" method="post">
 		Upload this file:
 		<input name="userfile" type="file" />
-		<br/>
-		<input type="submit" value="Upload File" />		
+		<br />
+		<input type="submit" value="Upload File" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về reset button</h4>
 	<form action="action.php">
-		First name:<br/>
-		<input type="text" name="firstname" value="Mickey"/>
-		<br/>
-		Last name:<br/>
+		First name:<br />
+		<input type="text" name="firstname" value="Mickey" />
+		<br />
+		Last name:<br />
 		<input type="text" name="lastname" value="Mouse" />
-		<br/><br/>
+		<br /><br />
 		<input type="submit" value="Submit" />
 		<input type="reset" />
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về group</h4>
 	<form action="action.php">
 		<fieldset>
 			<legend>Personal infomation</legend>
-			First name:<br/>
-			<input type="text" name="firstname" value="Mickey"/>
-			<br/>
-			Last name:<br/>
+			First name:<br />
+			<input type="text" name="firstname" value="Mickey" />
+			<br />
+			Last name:<br />
 			<input type="text" name="lastname" value="Mouse" />
-			<br/><br/>
+			<br /><br />
 			<input type="submit" value="Submit" />
 		</fieldset>
 	</form>
-	<br/><br/>
-	
-	
+	<br /><br />
+
+
 	<h4>Ví dụ về các thẻ form</h4>
 	<form>
-		
-		Name:<br/>
-		<input type="text" name="name" value="Trần Nhựt Quang"/>
-		<br/>
-		Password:<br/>
+
+		Name:<br />
+		<input type="text" name="name" value="Trần Nhựt Quang" />
+		<br />
+		Password:<br />
 		<input type="password" name="pass" value="quangdaik" />
-		<br/>
-		
+		<br />
+
 		Married:
 		<input type="checkbox" name="married" value="false" />
-		<br/>
-		
+		<br />
+
 		Male
 		<input type="radio" name="male" checked="checked" />
 		Female
 		<input type="radio" name="female" />
-		<br/>
-		
+		<br />
+
 		<input type="hidden" />
 		Professional
 		<select>
@@ -139,15 +140,16 @@
 			<option>Network</option>
 			<option selected="">Student</option>
 		</select>
-		<br/>
-		
+		<br />
+
 		<textarea name="comment" rows="5" cols="20"></textarea>
-		<br/>
-		
+		<br />
+
 		<input type="submit" /> <input type="reset" />
 	</form>
-	
-	<br/><br/>
-	<a href="../index.html">Quay về trang chủ</a>
+
+	<br /><br />
+	<a href="/basic-html/index.html">Quay về ví dụ</a>
 </body>
+
 </html>
