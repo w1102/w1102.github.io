@@ -14,6 +14,31 @@
     
     <script src="/script/toggle-menu.js" defer></script>
     <script src="/script/main.js"></script>
+    
+    <script>
+    
+        function addMenuItem(hash, name, img) {
+            
+            let item = document.createElement("LI")
+            item.setAttribute('class', 'item')
+            item.innerHTML =
+                '<ul>'
+            +       '<li>'
+            +           '<p onclick="switchMenu(\'' + hash + '\')">'
+            +               '<img id="img-' + hash + '" src="' + img + '" alt=""/>'
+            +           '</p>'
+            +        '</li>'
+            +        '<li>'
+            +            '<p class="text" id="txt-' + hash + '" onclick="switchMenu(\'' + hash + '\')">' + name + '</p>'
+            +        '</li>'
+            +    '</ul>'
+
+            let menu = document.querySelector('.menu')
+            menu.appendChild(item); 
+            
+        }
+    
+    </script>
 
     <style>
     
@@ -37,131 +62,35 @@
 </head>
 <body>
     
-        
     <nav class="header-container">
         <ul class="menu">
-            
+    
             <li class="logo">
                 <img src="/img/header/ctu.png" width="50"  height="50" alt=""/>
-                
                 <p style="color:white;margin:10px;text-transform:uppercase">
                     Sinh viên cơ điện tử
                 </p>
             </li>
             
-            <li class="item">
-                <ul>
-                   <li>
-                       <p onclick="switchMenu('home')">
-                           <img id="img-home" src="/img/header/home.svg" alt=""/>
-                       </p>
-                   </li> 
-                   
-                   <li>
-                       <p class="text" id="txt-home" onclick="switchMenu('home')">Home</p>
-                   </li>
-    
-                </ul>                
-            </li>
-            
-            <li class="item">
-                <ul>
-                   <li>
-                       <p onclick="switchMenu('target')">
-                           <img id="img-target" src="/img/header/target.svg" alt=""/>
-                       </p>
-                   </li> 
-                   <li>
-                       <p class="text" id="txt-target" onclick="switchMenu('target')">Mục tiêu</p>
-                   </li>
-                   
-                </ul>                
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('standard')">
-                            <img id="img-standard" src="/img/header/standard.svg" alt=""/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-standard" onclick="switchMenu('standard')">Chuẩn đầu ra</p>
-                    </li>
-                </ul>
-            </li>
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('method')">
-                            <img id="img-method" src="/img/header/method.svg" alt=""/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-method" onclick="switchMenu('method')">PP giảng dạy</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('rate')">
-                            <img id="img-rate" src="/img/header/list.svg" alt=""/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-rate" onclick="switchMenu('rate')">PP đánh giá</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('time-table')">
-                            <img id="img-time-table" src="/img/header/time-table.svg" alt=""/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-time-table" onclick="switchMenu('time-table')">Tiết học</p>
-                    </li>
-                </ul>
-            </li>
-            
-            
-            <li class="item" id="lasted-item">
-                <ul>
-                    <li>
-                        <p onclick="switchMenu('location')">
-                            <img id="img-location" src="/img/header/location.svg" alt=""/>
-                        </p>
-                    </li> 
-                    <li>
-                        <p class="text" id="txt-location" onclick="switchMenu('location')">Phòng học</p>
-                    </li>
-                </ul>
-            </li>
+            <script>
+                addMenuItem('home', 'Home', '/img/header/home.svg')
+                addMenuItem('target', 'Mục tiêu', '/img/header/target.svg')
+                addMenuItem('standard', 'Chuẩn đầu ra', '/img/header/standard.svg')
+                addMenuItem('method', 'PP giảng dạy', '/img/header/method.svg')
+                addMenuItem('rate', 'PP đánh giá', '/img/header/list.svg')
+                addMenuItem('time-table', 'Tiết học', '/img/header/time-table.svg')
+                addMenuItem('location', 'Phòng học', '/img/header/location.svg')
+            </script>
             
             <li class="toggle"><img src="/img/header/menu.svg" alt="" width="25"></li>
-            
-
-            
+             
         </ul>
     </nav>
     
-    <!-- body content will be added by javascript -->
     <div class="body-container" data-html=""></div>
-    
     
     <div class="footer-container" data-html="/sub-page/footer.html"></div>
     
-    
-        
     <!-- Handle URL routing in single page -->
     <script>
         let urlHash = window.location.hash.substring(1)
@@ -173,10 +102,6 @@
         else {
             switchingMenu(urlHash)
         }
-        
-        
     </script>
-     
-    
 </body>
 </html>

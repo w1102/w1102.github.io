@@ -49,8 +49,6 @@ function switchingMenuCallback(menu, callback) {
 	let content = document.querySelector('.body-container')
 	let url = '/sub-page/' + menu + '.html'
 	
-	console.log(url)
-
 	content.setAttribute("data-html", url) 
 	includeHTML()
 	

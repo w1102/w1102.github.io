@@ -1,7 +1,5 @@
 const header = document.querySelector('.header-container')
-
 const toggle = header.querySelector(".toggle");
-console.log(toggle)
 const menu = header.querySelector(".menu");
 
 function removeMenu() {
