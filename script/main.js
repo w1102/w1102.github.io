@@ -1,7 +1,8 @@
 async function switchMenu(id) {
 	// remove menu if display in mobile screen
 	removeMenu()
-	
+
+	// set url in url bar
 	setUrl(id)
 
 	$('.body-container').slideToggle('fast', async function() {
@@ -11,13 +12,13 @@ async function switchMenu(id) {
 }
 
 async function switchingMenu(id) {
-	
+
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
 	for (let i = 0; i < texts.length; i++) {
 		texts[i].style.color = "black"
 	}
-	
+
 	let textSelected = document.querySelector(`#txt-${id}`)
 	try {
 		textSelected.style.color = "white"
@@ -61,7 +62,7 @@ function addMenuItem(id, name, img) {
 
 	let item = document.createElement("LI")
 	item.setAttribute('class', 'item')
-	item.innerHTML =	
+	item.innerHTML =
 	`
 		<ul>
 			<li>

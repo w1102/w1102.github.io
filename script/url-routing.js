@@ -1,5 +1,4 @@
-// var urlFull = [{"id":"home","urlHash":"home"}]
-// $.getJSON('/json/urlMap.json', function(data) { urlFull = data })
+var urlFull = [{"id":"home","urlHash":"home"},{"id":"target","urlHash":"muc-tieu"},{"id":"standard","urlHash":"chuan-dau-ra"},{"id":"method","urlHash":"pp-giang-day"},{"id":"rate","urlHash":"pp-danh-gia"},{"id":"time-table","urlHash":"tiet-hoc"},{"id":"location","urlHash":"phong-hoc"}]
 
 function FirstUrlRouting() {
 	let currentUrlHash = window.location.hash.substring(1)
