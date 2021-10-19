@@ -7,13 +7,8 @@ async function switchMenu(menu) {
 		window.location.replace('/#' + menu)
 	}
 
-	$('.body-container').slideToggle('fast',async function() {
-		
-		// switchingMenu(menu)
-		
+	$('.body-container').slideToggle('fast', async function() {
 		await switchingMenu(menu)
-		
-		
 		$(this).slideToggle('slow')
 	})
 }
@@ -25,14 +20,6 @@ async function switchingMenu(menu) {
 	for (let i = 0; i < texts.length; i++) {
 		texts[i].style.color = "black"
 	}
-	
-	// $( document ).ready(function() {
-	// 	$('.body-container').load(`https://w1102.github.io/sub-page/${menu}.html`, function() {
-	// 		console.log('hi')
-	// 	})
-	// });
-	
-	 
 
 	await includeHTML('.body-container', `/sub-page/${menu}.html`)
 
@@ -48,7 +35,6 @@ async function includeHTML(elementNote, file) {
 		note.innerHTML = await makeRequest('GET', file)
 	}
 }
-
 
 function makeRequest(method, url) {
 	return new Promise(function(resolve, reject) {
@@ -74,13 +60,12 @@ function makeRequest(method, url) {
 	});
 }
 
-
 function addMenuItem(hash, name, img) {
 
 	let item = document.createElement("LI")
 	item.setAttribute('class', 'item')
 	item.innerHTML =
-	`
+		`
 		<ul>
 			<li>
 				<p onclick='switchMenu("${hash}")'>
@@ -94,5 +79,4 @@ function addMenuItem(hash, name, img) {
 	`
 	let menu = document.querySelector('.menu')
 	menu.appendChild(item);
-
 }
