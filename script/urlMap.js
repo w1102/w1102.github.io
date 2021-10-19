@@ -1,4 +1,4 @@
-[
+var urlFull = [
 	{
 		"id":"home",
 		"urlHash":"home"
