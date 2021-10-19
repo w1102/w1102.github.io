@@ -1,5 +1,3 @@
-var LOGGING = true
-
 function switchMenu(menu) {
 	// remove menu if exits in mobile mode
 	removeMenu()
@@ -8,30 +6,69 @@ function switchMenu(menu) {
 	if (window.location.hash.substring(1) != menu) {
 		window.location.replace('/#' + menu)
 	}
-	
+
 	$('.body-container').slideToggle('fast', function() {
 		switchingMenu(menu)
 		$(this).slideToggle('slow')
 	})
 }
 
-async function switchingMenu(menu) {
+	function switchingMenu(menu) {
 
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
 	for (let i = 0; i < texts.length; i++) {
 		texts[i].style.color = "black"
 	}
-
-	await includeHTML('.body-container', `/sub-page/${menu}.html`)
 	
-	console.log('next step\n\n\n')
+	$( document ).ready(function() {
+		$('.body-container').load(`https://w1102.github.io/sub-page/${menu}.html`, function() {
+			console.log('hi')
+		})
+	});
+	
+	 
+
+	// await includeHTML('.body-container', `/sub-page/${menu}.html`)
+
 	let textSelected = document.querySelector(`#txt-${menu}`)
 	try {
 		textSelected.style.color = "white"
-	}
-	catch (err) {}
+	} catch (err) {}
 }
+
+async function includeHTML(elementNote, file) {
+	let note = document.querySelector(elementNote)
+	if (note) {
+		note.innerHTML = await makeRequest('GET', file)
+	}
+}
+
+
+function makeRequest(method, url) {
+	return new Promise(function(resolve, reject) {
+		let xhr = new XMLHttpRequest();
+		xhr.open(method, url);
+		xhr.onload = function() {
+			if (this.status >= 200 && this.status < 300) {
+				resolve(xhr.response);
+			} else {
+				reject({
+					status: this.status,
+					statusText: xhr.statusText
+				});
+			}
+		};
+		xhr.onerror = function() {
+			reject({
+				status: this.status,
+				statusText: xhr.statusText
+			});
+		};
+		xhr.send();
+	});
+}
+
 
 function addMenuItem(hash, name, img) {
 
@@ -53,40 +90,4 @@ function addMenuItem(hash, name, img) {
 	let menu = document.querySelector('.menu')
 	menu.appendChild(item);
 
-}
-
-async function includeHTML(classSelect, file) {
-	if (LOGGING) {console.log('including html')}
-	let note = document.querySelector(classSelect)
-	if (note) {
-		note.innerHTML = await makeRequest('GET', file)
-		if (LOGGING) {console.log('included html')}
-	}
-}
-
-
-function makeRequest(method, url) {
-	return new Promise(function (resolve, reject) {
-		let xhr = new XMLHttpRequest();
-		xhr.open(method, url);
-		xhr.onload = function () {
-			if (LOGGING) {console.log('get html')}
-			if (this.status >= 200 && this.status < 300) {
-				resolve(xhr.response);
-				if (LOGGING) {console.log('get successfull html')}
-			} else {
-				reject({
-					status: this.status,
-					statusText: xhr.statusText
-				});
-			}
-		};
-		xhr.onerror = function () {
-			reject({
-				status: this.status,
-				statusText: xhr.statusText
-			});
-		};
-		xhr.send();
-	});
 }

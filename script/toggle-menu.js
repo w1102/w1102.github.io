@@ -4,7 +4,7 @@ const menu = header.querySelector(".menu");
 
 function removeMenu() { 
 	if (menu.classList.contains('active')) {
-		menu.classList.remove('active')
+		menu.classList.remove('active')	
 		toggle.querySelector('img').src =
 			"/img/header/menu.svg"
 	}
