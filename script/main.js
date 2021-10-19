@@ -1,4 +1,4 @@
-function switchMenu(menu) {
+async function switchMenu(menu) {
 	// remove menu if exits in mobile mode
 	removeMenu()
 
@@ -7,13 +7,18 @@ function switchMenu(menu) {
 		window.location.replace('/#' + menu)
 	}
 
-	$('.body-container').slideToggle('fast', function() {
-		switchingMenu(menu)
+	$('.body-container').slideToggle('fast',async function() {
+		
+		// switchingMenu(menu)
+		
+		await switchingMenu(menu)
+		
+		
 		$(this).slideToggle('slow')
 	})
 }
 
-	function switchingMenu(menu) {
+async function switchingMenu(menu) {
 
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
@@ -21,15 +26,15 @@ function switchMenu(menu) {
 		texts[i].style.color = "black"
 	}
 	
-	$( document ).ready(function() {
-		$('.body-container').load(`https://w1102.github.io/sub-page/${menu}.html`, function() {
-			console.log('hi')
-		})
-	});
+	// $( document ).ready(function() {
+	// 	$('.body-container').load(`https://w1102.github.io/sub-page/${menu}.html`, function() {
+	// 		console.log('hi')
+	// 	})
+	// });
 	
 	 
 
-	// await includeHTML('.body-container', `/sub-page/${menu}.html`)
+	await includeHTML('.body-container', `/sub-page/${menu}.html`)
 
 	let textSelected = document.querySelector(`#txt-${menu}`)
 	try {
