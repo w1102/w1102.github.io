@@ -2,7 +2,7 @@ const header = document.querySelector('.header-container')
 const toggle = header.querySelector(".toggle");
 const menu = header.querySelector(".menu");
 
-function removeMenu() {
+function removeMenu() { 
 	if (menu.classList.contains('active')) {
 		menu.classList.remove('active')
 		toggle.querySelector('img').src =

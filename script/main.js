@@ -1,3 +1,5 @@
+var LOGGING = true
+
 function switchMenu(menu) {
 	// remove menu if exits in mobile mode
 	removeMenu()
@@ -6,17 +8,14 @@ function switchMenu(menu) {
 	if (window.location.hash.substring(1) != menu) {
 		window.location.replace('/#' + menu)
 	}
-
-	// switching menu
-	$('.body-container').animate({ marginTop: -500, opacity: 0 }, 400, function() {
+	
+	$('.body-container').slideToggle('fast', function() {
 		switchingMenu(menu)
-		$('.body-container').animate({ marginTop: 2000 }, 0, function() {
-			$('.body-container').animate({ marginTop: 100, opacity: 1 }, 300)
-		})
+		$(this).slideToggle('slow')
 	})
 }
 
-function switchingMenu(menu) {
+async function switchingMenu(menu) {
 
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
@@ -24,8 +23,9 @@ function switchingMenu(menu) {
 		texts[i].style.color = "black"
 	}
 
-	includeHTML('.body-container', `/sub-page/${menu}.html`)
-
+	await includeHTML('.body-container', `/sub-page/${menu}.html`)
+	
+	console.log('next step\n\n\n')
 	let textSelected = document.querySelector(`#txt-${menu}`)
 	try {
 		textSelected.style.color = "white"
@@ -55,21 +55,38 @@ function addMenuItem(hash, name, img) {
 
 }
 
-function getHTML(file, callback) {
-	let xhttp = new XMLHttpRequest()
-	xhttp.onreadystatechange = function() {
-		if (this.status == 200) { callback(this.responseText) }
-		if (this.status == 404) { callback(`<h1>Page not found</h1>`) }
-	}
-	xhttp.open("GET", file, true)
-	xhttp.send()
-}
-
-function includeHTML(classSelect, file) {
+async function includeHTML(classSelect, file) {
+	if (LOGGING) {console.log('including html')}
 	let note = document.querySelector(classSelect)
 	if (note) {
-		getHTML(file, function(html) {
-			note.innerHTML = html
-		})
+		note.innerHTML = await makeRequest('GET', file)
+		if (LOGGING) {console.log('included html')}
 	}
+}
+
+
+function makeRequest(method, url) {
+	return new Promise(function (resolve, reject) {
+		let xhr = new XMLHttpRequest();
+		xhr.open(method, url);
+		xhr.onload = function () {
+			if (LOGGING) {console.log('get html')}
+			if (this.status >= 200 && this.status < 300) {
+				resolve(xhr.response);
+				if (LOGGING) {console.log('get successfull html')}
+			} else {
+				reject({
+					status: this.status,
+					statusText: xhr.statusText
+				});
+			}
+		};
+		xhr.onerror = function () {
+			reject({
+				status: this.status,
+				statusText: xhr.statusText
+			});
+		};
+		xhr.send();
+	});
 }

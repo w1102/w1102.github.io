@@ -7,86 +7,86 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Tổng hợp ví dụ</title>
 
-   <link rel="stylesheet" href="index.css" />
+   <!-- <link rel="stylesheet" href="index.css" /> -->
+   <script src="/script/jquery-3.6.0.min.js"></script>
+
 
    <script>
-      function genLiItem(start, end) {
-
+      function addItem(start, end) {
          for (let i = start; i <= end; i++) {
             let html =
                `
-               <li>
-               <a href="vd${i}"/index.html>Ví dụ ${i}</a>
-               </li>
+               <a class="item" href="vd${i}"/index.html>Ví dụ ${i}</a>
+               <br/>
             `
             document.write(html)
          }
-
-
-
       }
    </script>
 
 
+
    <style>
-      .header {
+      #slider a:link {
+         text-decoration: none;
+         color: darkcyan;
+      }
+
+      #slider a:visited {
+         color: darkslateblue
+      }
+
+      #slider a:hover {
+         background: #cce5ff;
+         padding: 10px 30px;
+         border-radius: 10px;
+         
+         color: #ed8a11
+      }
+
+      #slider {
+         width: 50%;
+         margin: 0 auto;
+         background-color: rgba(183, 135, 10, 0.8);
+         border-radius: 10px;
+
          display: flex;
-         flex-flow: row nowrap;
-         align-items: center;
-         justify-content: space-between;
-
-         width: 100%;
-         height: 70px;
-         background-color: #2697de
+         flex-direction: column;
       }
 
-      a:link {
-         color: white;
-         text-decoration: none
+      #slider .slide {
+         text-align: center;
+         display: none;
+         margin-bottom: 10px;
+         line-height: 30px;
       }
 
-      a:visited {
-         color: white
+      #slider .slide.active {
+         display: block
+      }
+      
+      
+      
+      
+
+      #slider .control {
+         margin: 0 10px;
+         display: flex;
+         justify-content: space-between
       }
 
-
-      #content {
-         margin-top: 10px;
-         ;
+      #slider img {
+         width: 40px;
+         height: 40px;
       }
 
-      body {
-         background-image: url(/img/bg.jpg)
-      }
+      #slider .prev {}
 
-      .header p a {
-         font-size: 18pt
-      }
-
-      .header p {
-         font-size: 20pt
-      }
-
-      .header img {
-         width: 60px;
-         height: 60px
-      }
-
-      @media (max-width: 500px) {
-         .header p a {
-            font-size: 10pt
-         }
-
-         .header p {
-            font-size: 11pt
-         }
-
-         .header img {
-            width: 40px;
-            height: 40px
-         }
-      }
+      #slider .next {}
    </style>
+
+
+
 
 
 </head>
@@ -95,74 +95,84 @@
 <body>
 
 
-   <div class="header">
-      <img style="margin-left: 10px" class="logo" src="/img/header/ctu.png" alt="" />
-
-      <p style="color: white;text-align: center">Tổng hợp ví dụ HTML</p>
-
-      <p style="margin-right: 20px"><a href="/">HOME</a></p>
+   <div id="slider">
 
 
-
-   </div>
-
-
-
-   <div id="content">
+      <div class="control">
+         <img onclick="changeSlide('prev')" class="prev" src="/img/basic-html/rewind.svg" alt="">
+         <img onclick="changeSlide('next')" class="next" src="/img/basic-html/forward.svg" alt="">
+      </div>
 
 
-      <ol>
+      <div class="slides">
 
-         <li class="root_li">
-            <h2 style="color:lawngreen">Buổi 1</h2>
-            <ul>
-               <script>
-                  genLiItem(1, 8)
-               </script>
-            </ul>
-         </li>
+         <div class="slide active">
+            <h2>Buổi 1</h2>
+            <script>
+               addItem(1, 8)
+            </script>
+         </div>
 
 
-         <li class="root_li">
-            <h2 style="color:lawngreen">Buổi 2</h2>
-            <ul>
-               <script>
-                  genLiItem(10, 26)
-               </script>
-            </ul>
-         </li>
+         <div class="slide ">
+            <h2>Buổi 2</h2>
+            <script>
+               addItem(10, 26)
+            </script>
+         </div>
 
-         <li class="root_li">
-            <h2 style="color:lawngreen">Buổi 3</h2>
-            <ul>
-               <script>
-                  genLiItem(30, 34)
-               </script>
-            </ul>
-         </li>
+         <div class="slide">
+            <h2>Buổi 3</h2>
+            <script>
+               addItem(30, 34)
+            </script>
+         </div>
 
 
-         <li class="root_li">
-            <h2 style="color:lawngreen">Buổi 4</h2>
-            <ul>
-               <script>
-                  genLiItem(40, 43)
-               </script>
-            </ul>
-         </li>
+         <div class="slide">
+            <h2>Buổi 4</h2>
+            <script>
+               addItem(40, 43)
+            </script>
+         </div>
 
-         <li class="root_li">
-            <h2 style="color:lawngreen">Buổi 5</h2>
-            <ul>
-               <script>
-                  genLiItem(44, 48)
-               </script>
-            </ul>
-         </li>
+         <div class="slide">
+            <h2>Buổi 5</h2>
+            <script>
+               addItem(44, 48)
+            </script>
+         </div>
 
-      </ol>
+      </div>
 
    </div>
+   
+   <script>
+      function changeSlide(direction) {
+         let currentSlide = $('.slides .active')
+         let nextSlide = currentSlide.next()
+         let prevSlide = currentSlide.prev()
+         
+         if (direction == 'next') {
+            if (nextSlide.length) {
+               nextSlide.addClass('active')
+            }
+            else {
+               $('.slide').first().addClass('active')
+            }
+         }
+         else {
+            if (prevSlide.length) {
+               prevSlide.addClass('active')
+            }
+            else {
+               $('.slide').last().addClass('active')
+            }
+         }
+         
+         currentSlide.removeClass('active')
+      }
+   </script>
 
    <br /><br />
    <a href="/basic-html/index.html">Quay về ví dụ</a>
