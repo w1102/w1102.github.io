@@ -1,32 +1,29 @@
-async function switchMenu(menu) {
-	// remove menu if exits in mobile mode
+async function switchMenu(id) {
+	// remove menu if display in mobile screen
 	removeMenu()
-
-	// URL handle routing in single page
-	if (window.location.hash.substring(1) != menu) {
-		window.location.replace('/#' + menu)
-	}
+	
+	setUrl(id)
 
 	$('.body-container').slideToggle('fast', async function() {
-		await switchingMenu(menu)
+		await switchingMenu(id)
 		$(this).slideToggle('slow')
 	})
 }
 
-async function switchingMenu(menu) {
-
+async function switchingMenu(id) {
+	
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
 	for (let i = 0; i < texts.length; i++) {
 		texts[i].style.color = "black"
 	}
-
-	await includeHTML('.body-container', `/sub-page/${menu}.html`)
-
-	let textSelected = document.querySelector(`#txt-${menu}`)
+	
+	let textSelected = document.querySelector(`#txt-${id}`)
 	try {
 		textSelected.style.color = "white"
 	} catch (err) {}
+
+	await includeHTML('.body-container', `/sub-page/${id}.html`)
 }
 
 async function includeHTML(elementNote, file) {
@@ -60,20 +57,20 @@ function makeRequest(method, url) {
 	});
 }
 
-function addMenuItem(hash, name, img) {
+function addMenuItem(id, name, img) {
 
 	let item = document.createElement("LI")
 	item.setAttribute('class', 'item')
-	item.innerHTML =
-		`
+	item.innerHTML =	
+	`
 		<ul>
 			<li>
-				<p onclick='switchMenu("${hash}")'>
-					<img id="img-${hash}" src="${img}" alt="">
+				<p onclick='switchMenu("${id}")'>
+					<img id="img-${id}" src="${img}" alt="">
 				</p>
 			</li>
 			<li>
-				<p class="text" id="txt-${hash}" onclick='switchMenu("${hash}")'>${name}</p>
+				<p class="text" id="txt-${id}" onclick='switchMenu("${id}")'>${name}</p>
 			</li>
 		</ul>            
 	`

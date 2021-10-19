@@ -67,18 +67,15 @@
     <div class="body-container"></div>
     <div class="footer-container"></div>
 
-    <!-- Handle URL routing in single page -->
+
     <script>
         includeHTML('.footer-container', '/sub-page/footer.html')
-
-        let urlHash = window.location.hash.substring(1)
-        if (urlHash == '') {
-            window.location.replace('/#home');
-            switchingMenu('home')
-        } else {
-            switchingMenu(urlHash)
-        }
     </script>
+
+    <script src="/script/url-routing.js"></script>
+
+
+
 
 </body>
 
