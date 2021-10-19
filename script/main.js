@@ -19,7 +19,7 @@ async function switchingMenu(id) {
 		texts[i].style.color = "black"
 	}
 
-	let textSelected = document.querySelector(`#txt-${id}`)
+	let textSelected = document.querySelector(`#text-${id}`)
 	try {
 		textSelected.style.color = "white"
 	} catch (err) {}
@@ -67,11 +67,11 @@ function addMenuItem(id, name, img) {
 		<ul>
 			<li>
 				<p onclick='switchMenu("${id}")'>
-					<img id="img-${id}" src="${img}" alt="">
+					<img src="${img}" alt="">
 				</p>
 			</li>
 			<li>
-				<p class="text" id="txt-${id}" onclick='switchMenu("${id}")'>${name}</p>
+				<p class="text" id="text-${id}" onclick='switchMenu("${id}")'>${name}</p>
 			</li>
 		</ul>            
 	`
