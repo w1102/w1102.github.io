@@ -17,6 +17,8 @@ async function switchMenu(id) {
 
 async function switchingMenu(id) {
 	
+	console.log('step')
+	
 
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')

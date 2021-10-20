@@ -7,7 +7,7 @@ function FirstUrlRouting() {
 	let currentUrlHash = window.location.hash.substring(2)
 	if (currentUrlHash == '') {
 		// window.location.replace('/#/home');
-		history.pushState('', '', '/#/home/');
+		history.pushState('', '', '/#/home');
 		switchingMenu('home')
 	} else {
 		let currentID = getID(currentUrlHash)
