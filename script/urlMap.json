@@ -1,0 +1,37 @@
+[
+	{
+		"id":"home",
+		"urlHash":"home",
+		"title":"Sinh viên CTU"
+	},
+	{
+		"id":"target",
+		"urlHash":"muc-tieu",
+		"title":"Mục tiêu học phần"
+	},
+	{
+		"id":"standard",
+		"urlHash":"chuan-dau-ra",
+		"title":"Chuẩn đầu ra"
+	},
+	{
+		"id":"method",
+		"urlHash":"pp-giang-day",
+		"title":"Phương pháp giảng dạy"
+	},
+	{
+		"id":"rate",
+		"urlHash":"pp-danh-gia",
+		"title":"Phương pháp đánh giá"
+	},
+	{
+		"id":"time-table",
+		"urlHash":"tiet-hoc",
+		"title":"Phân bố tiết học"
+	},
+	{
+		"id":"location",
+		"urlHash":"phong-hoc",
+		"title":"Địa điểm phòng học"
+	}
+]

@@ -3,7 +3,10 @@ async function switchMenu(id) {
 	removeMenu()
 
 	// set url in url bar
-	setUrl(id)
+	urlRounting(id)
+	
+	// set page title
+	setTitle(id)
 
 	$('.body-container').slideToggle('fast', async function() {
 		await switchingMenu(id)
@@ -12,6 +15,7 @@ async function switchMenu(id) {
 }
 
 async function switchingMenu(id) {
+	
 
 	// set color of all item menu is black
 	let texts = document.querySelectorAll('.text')
