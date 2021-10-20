@@ -1,5 +1,5 @@
 async function switchMenu(id) {
-	// remove menu if display in mobile screen
+	// remove menu if it display in mobile screen
 	removeMenu()
 
 	// set url in url bar
