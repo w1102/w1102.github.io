@@ -6,7 +6,7 @@
 
 nav {
 	background-color: #2697de;
-	padding: 0 15px;
+	padding: 0 15px 0 5px;
 
 	position: fixed;
 	top: 0;
@@ -45,8 +45,6 @@ nav {
 
 
 .item img {
-	width: 32px;
-	height: 32px;
 	filter: invert(94%) sepia(11%) saturate(48%) hue-rotate(132deg) brightness(103%) contrast(92%);
 }
 
@@ -74,11 +72,13 @@ nav {
 
 /* ===============		MOBILE		=============== */
 @media (max-width: 800px) {
+	.nav {
+		padding: 0 5px;
+	}
 	.item img {
 		display: none
 	}
-
-
+	
 	.menu {
 		flex-wrap: wrap;
 		align-items: center;

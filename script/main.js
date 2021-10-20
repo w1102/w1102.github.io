@@ -67,7 +67,7 @@ function addMenuItem(id, name, img) {
 		<ul>
 			<li>
 				<p onclick='switchMenu("${id}")'>
-					<img src="${img}" alt="">
+					<img src="${img}" alt="" width="25" height="25">
 				</p>
 			</li>
 			<li>
