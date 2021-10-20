@@ -4,7 +4,8 @@ const urlFull = [{"id":"home","urlHash":"home","title":"Sinh viên CTU"},{"id":"
 function FirstUrlRouting() {
 	let currentUrlHash = window.location.hash.substring(2)
 	if (currentUrlHash == '') {
-		window.location.replace('/#/home');
+		// window.location.replace('/#/home');
+		history.pushState('', '', '/#/home/');
 		switchingMenu('home')
 	} else {
 		let currentID = getID(currentUrlHash)
@@ -18,7 +19,8 @@ function urlRounting(id) {
 	if (getID(currentUrlHash) != id) {
 		for (let url of urlFull) {
 			if (url.id == id) {
-				window.location.replace('/#/' + url.urlHash)
+				// window.location.replace('/#/' + url.urlHash)
+				history.pushState('', '', '/#/' + url.urlHash);
 			}
 		}
 	}
