@@ -7,10 +7,11 @@ async function switchMenu(id) {
 	
 	// set page title
 	setTitle(id)
-
+	
 	$('.body-container').slideToggle('fast', async function() {
 		await switchingMenu(id)
-		$(this).slideToggle('slow')
+		// $(this).slideToggle('fast')
+		$(this).toggle('bounce', { times: 2, distance: 60 }, "slow" )
 	})
 }
 
