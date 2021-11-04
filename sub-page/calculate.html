@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	
+	<style>
+		.form-container {
+			margin: 0 auto;
+			width: 60%
+		}
+	
+		.form-row {
+			margin-bottom: 5px;
+			display: flex;
+			align-items: center;
+		}
+		
+		.form-input {
+			padding: 3px 5px;
+			box-sizing: border-box;
+			
+			min-height: 15px;
+			border-radius: 5px;
+			border: 1px solid #2d9fd9;
+			
+			margin: 0 10px;
+			flex-grow: 1;
+		}
+		
+		.form-btn {
+			width: 70px;
+		}
+		
+		#result-label {
+			flex-grow: 1
+		}
+	</style>
+	
+</head>
+<body>
+	
+<script>
+// ham tinh pt bac hai
+function quadraticCalculator(a, b, c) {
+	// tạo đối tượng kq
+	let result = {
+		info : '',
+		x1: 0,
+		x2: 0,
+	}
+	
+	// tính
+	const delta = b*b - 4*a*c
+	
+	if (a == 0) {
+		if (b != 0)
+			result.info = 'motNghiem'
+		else {
+			if (c != 0) 
+				result.info = 'voNghiem'
+			else
+				result.info = 'voSoNghiem'
+		}
+	} else {
+		
+		if (delta > 0) {
+			result.info = 'haiNghiem'
+			result.x2 = -(b + Math.sqrt(delta))/(2.0*a)
+			result.x1 = -(b - Math.sqrt(delta))/(2.0*a)
+		} else if (delta == 0) {
+			result.info = 'nghiemKep'
+			result.x1 = -b / (2.0*a)
+		} else {
+			result.info = 'voNghiem'
+		}
+			
+	}
+	
+	// làm tròn hai chữ số thập phân
+	result.x1 = result.x1.toFixed(2)
+	result.x2 = result.x2.toFixed(2)
+	
+	return result	
+}
+
+// hàm lấy ra các hệ số trong khung input
+function getCoefficient() {
+	const a = document.querySelector('#a-input')
+	const b = document.querySelector('#b-input')
+	const c = document.querySelector('#c-input')
+	
+	return {
+		a: parseFloat(a.value), 
+		b: parseFloat(b.value), 
+		c: parseFloat(c.value)
+	}
+	
+}
+
+// hàm in ra kết quả tính toasn
+function printResult() {
+	const coefficient = getCoefficient()
+	const result = quadraticCalculator(coefficient.a, coefficient.b, coefficient.c)
+	
+	const resultLabel = document.querySelector('#result-label')
+	let text = ''
+	switch (result.info) {
+		case 'voNghiem':
+			text='pt vo nghiem'
+			break
+			
+		case 'voSoNghiem':
+			text='pt vo so nghiem'
+			break
+			
+		case 'motNghiem':
+			text=`pt co 1 nghiem: ${result.x1}`
+			break
+			
+		case 'nghiemKep':
+			text=`pt co nghiem kep: x1 = x2 = ${result.x1}`
+			break
+		case 'haiNghiem':
+			text=`pt co hai nghiem: x1 = ${result.x1}, x2 = ${result.x2}`
+			break
+	}
+	
+	resultLabel.innerHTML = text
+}
+
+// tạo hệ số ngẫu nhiên
+function randomCoefficient(selector) {
+	const coefficient = document.querySelector(selector)
+	
+	let negativeRand = Math.random() < 0.5 ? -1 : 1
+	if (selector == '#a-input') negativeRand = 1
+	
+	coefficient.value = (Math.random() * 100 * negativeRand).toFixed(2)
+}
+
+</script>
+	
+
+
+
+<div class="form-container">
+	
+	<form class="form">
+		
+		<div class="form-row">
+			<label>A:</label>
+			<input class="form-input" id="a-input" value="0">
+			<input type="button" class="form-btn" onclick="randomCoefficient('#a-input')" value="random">
+		</div>
+		
+		<div class="form-row">
+			<label>B:</label>
+			<input class="form-input" id="b-input" value="0">
+			<input type="button" class="form-btn" onclick="randomCoefficient('#b-input')" value="random">
+		</div>
+		
+		<div class="form-row">
+			<label>C:</label>
+			<input class="form-input" id="c-input" value="0">
+			<input type="button" class="form-btn" onclick="randomCoefficient('#c-input')" value="random">
+		</div>
+		
+		<div class="form-row">
+			<label id="result-label">Ket qua: </label>
+			<input type="button" class="form-btn" onclick="printResult()" value="Calculate">
+		</div>
+	</form>
+	
+</div>
+	
+	
+	
+</body>
+</html>
