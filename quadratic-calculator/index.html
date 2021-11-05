@@ -118,11 +118,13 @@
 		
 		if(window.innerWidth <= 500) {
 			document.querySelector('.sidebar').style.width = window.innerWidth + 'px'
+			document.querySelector('.sidebar').style.height= window.innerHeight + 'px'
 		}
 		
 		window.addEventListener('resize', () => {
 			if(window.innerWidth <= 500) {
 				document.querySelector('.sidebar').style.width = window.innerWidth + 'px'
+				document.querySelector('.sidebar').style.height= window.innerHeight + 'px'
 			}
 		})
 
