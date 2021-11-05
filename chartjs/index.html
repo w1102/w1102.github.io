@@ -156,9 +156,7 @@
 
 		if(windowWidth <= displayMobile) {
 			document.querySelector('.app').style.flexFlow = "row wrap"
-			document.querySelector('.sidebar').style.width = `${windowWidth}px`
-			document.querySelector('.content').style.width = `${windowWidth}px`
-			document.querySelector('.settings').style.width = `${windowWidth}px`
+			document.querySelector('.sidebar, .content, .settings').style.width = `${windowWidth}px`
 		} else if(windowWidth <= DisplayTable) {
 			document.querySelector('.app').style.flexFlow = "row wrap"
 			document.querySelector('.sidebar').style.width = `${sidebarWidth}px`
