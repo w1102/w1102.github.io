@@ -26,6 +26,15 @@ let c = 0
 let d = 0
 
 
+const hashURL = window.location.hash.substring(1)
+if (hashURL !== '') {
+	const coeffs = hashURL.split(',')
+	a = parseFloat(coeffs[0])
+	b = parseFloat(coeffs[1])
+	c = parseFloat(coeffs[2])
+}
+
+
 /* ================= =================  chạy 1 lần khi load web ================= ================= =================  */
 
 

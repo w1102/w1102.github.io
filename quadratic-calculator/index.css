@@ -1,0 +1,114 @@
+.header {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	height: 70px;
+	background-color: #2697de
+}
+
+.header a:link {
+	color: white;
+	text-decoration: none
+}
+
+.header a:visited {
+	color: white
+}
+
+
+
+.header p a {
+	font-size: 18pt
+}
+
+.header p {
+	font-size: 20pt
+}
+
+.header img {
+	width: 60px;
+	height: 60px
+}
+
+@media (max-width: 500px) {
+	.header p a {
+		font-size: 10pt
+	}
+
+	.header p {
+		font-size: 11pt
+	}
+
+	.header img {
+		width: 40px;
+		height: 40px
+	}
+}
+
+.app {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	height: 100%;
+	width: 100%;
+}
+
+.sidebar {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	background-color: #dfdcb9;
+	height: 100%;
+	max-width: 230px;
+
+}
+
+
+
+.sidebar form {
+	padding: 0 10px;
+	margin-top: 20px;
+}
+
+.sidebar label {
+	margin-bottom: 10px;
+}
+
+
+.settings-form label {
+	margin-bottom: 10px;
+}
+
+.settings-form {
+	display: flex;
+	flex-flow: column nowrap;
+	margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+.content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.result-container {
+	overflow: scroll;
+	flex: 1;
+	background-color: #1e7069;
+}
+
+body,
+html {
+	height: 100%;
+}
