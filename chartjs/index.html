@@ -153,10 +153,12 @@
 
 		const DisplayTable = 750
 		const displayMobile = 400
+		
+		for (const div of document.querySelectorAll('.sidebar, .content, .settings')) div.style.width = `${windowWidth}px`
 
 		if(windowWidth <= displayMobile) {
 			document.querySelector('.app').style.flexFlow = "row wrap"
-			document.querySelector('.sidebar, .content, .settings').style.width = `${windowWidth}px`
+			for (const div of document.querySelectorAll('.sidebar, .content, .settings')) div.style.width = `${windowWidth}px`
 		} else if(windowWidth <= DisplayTable) {
 			document.querySelector('.app').style.flexFlow = "row wrap"
 			document.querySelector('.sidebar').style.width = `${sidebarWidth}px`
@@ -171,6 +173,7 @@
 	}
 	setWidth()
 	window.addEventListener('resize', () => setWidth())
+	
 
 	const headerHeight = 70
 	document.querySelector('body').style.height = `${window.innerHeight - headerHeight}px`
