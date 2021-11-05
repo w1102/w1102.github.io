@@ -192,15 +192,14 @@ window.addEventListener("input", event => {
 
 // sự kiện click button
 for (let button of document.querySelectorAll('button')) button.addEventListener('click', event => {
-	const div = event.target.parentElement.parentElement
-	switch (div.id) {
+	switch (event.target.parentElement.id) {
 		case 'step':
-			step += event.target.id === 'increase' ? 0.1 : (step >= 0.2 ? -0.1 : 0)
-			div.querySelector('input').value = step.toFixed(1)
+			step += event.target.id === 'increase' ? 0.1 : (step >= 0.18 ? -0.1 : 0)
+			event.target.parentElement.querySelector('input').value = step.toFixed(1)
 			break
 		case 'pointRadius':
 			pointRadius += event.target.id === 'point-increase' ? 0.5 : (pointRadius >= 0.5 ? -0.5 : 0)
-			div.querySelector('input').value = pointRadius.toFixed(1)
+			event.target.parentElement.querySelector('input').value = pointRadius.toFixed(1)
 			break
 	}
 	drawChart()
