@@ -48,13 +48,6 @@
 	padding: 0 10px;
 	background-color: #dfdcb9;
 }
-
-
-
-.settings label {
-	/* margin: 10px 0; */
-}
-
 /* ============================ color picker ============================== */
 .colorpicker-container {
 	display: flex;
